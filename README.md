@@ -1,7 +1,7 @@
 # update memo
 
 ## layout done
-![layout image](https://ibb.co/n5OqCe)
+![layout image](https://imgur.com/a/ArQguRs)
 
 # projects
 
