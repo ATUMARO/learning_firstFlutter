@@ -15,14 +15,14 @@ class MyApp extends StatelessWidget {
         body: ListView(
           children: [
             Image.asset(
-              'images/lake.jpg',
+              'images/source.jpg',
               width: 600.0,
               height: 240.0,
               fit: BoxFit.cover,
             ),
             createTitleSection(),
-//    buttonSection,
-//    textSection,
+            createButtonSection(context),
+            createTextSection()
           ],
         ),
       ),
@@ -30,8 +30,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/*
+  title section
+ */
 Widget createTitleSection() {
-  return new Container(
+  return Container(
     padding: const EdgeInsets.all(32.0),
     child: new Row(
       children: [
@@ -64,5 +67,61 @@ Widget createTitleSection() {
         new Text('41'),
       ],
     ),
+  );
+}
+
+/*
+  button section
+ */
+
+Widget createButtonSection(BuildContext context) {
+  return Container(
+      child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+      buildButtonColumn(Icons.call, 'CALL', context),
+  buildButtonColumn(Icons.near_me, 'ROUTE', context),
+  buildButtonColumn(Icons.share, 'SHARE', context),
+  ],
+  ));
+}
+
+/*
+  button item
+ */
+Column buildButtonColumn(IconData icon, String label, BuildContext context) {
+    Color color = Theme.of(context).primaryColor;
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8.0),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12.0,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+/*
+   text section
+ */
+Widget createTextSection() {
+  return Container(
+      padding: const EdgeInsets.all(32.0),
+  child: Text(
+  '''
+長いテキストああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ     ''',
+  softWrap: true,
+  )
   );
 }
