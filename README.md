@@ -10,7 +10,7 @@ For help getting started with Flutter, view our online
 ## update memo
 
 ### 2.layout done
-![layout image](https://github.com/ATUMARO/learning_firstFlutter/tree/master/images/layout.png)
+<img src="https://github.com/ATUMARO/learning_firstFlutter/blob/screenshot/screenshot/layout.png" alt="drawing" width="200px"/>
 
 ### 1.simple project done
 [flutter get started](https://flutter.io/get-started/learn-more/)
