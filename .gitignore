@@ -17,6 +17,9 @@
 *.ipr
 *.iws
 .idea/
+.idea/workspace.xml
+.idea/Dart_SDK.xml
+.idea/Dart_Packages.xml
 
 # Visual Studio Code related
 .vscode/
