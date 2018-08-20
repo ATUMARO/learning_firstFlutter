@@ -3,11 +3,18 @@ import 'package:flutter/material.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
+  final newThemeData = ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.pink[200],
+    accentColor: Colors.pink[900],
+  );
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Layout Demo',
+      theme: newThemeData,
       home: Scaffold(
         appBar: AppBar(
           title: Text('Top Lakes'),
@@ -77,12 +84,12 @@ Widget createTitleSection() {
 Widget createButtonSection(BuildContext context) {
   return Container(
       child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
       buildButtonColumn(Icons.call, 'CALL', context),
-  buildButtonColumn(Icons.near_me, 'ROUTE', context),
-  buildButtonColumn(Icons.share, 'SHARE', context),
-  ],
+      buildButtonColumn(Icons.near_me, 'ROUTE', context),
+      buildButtonColumn(Icons.share, 'SHARE', context),
+    ],
   ));
 }
 
@@ -90,27 +97,27 @@ Widget createButtonSection(BuildContext context) {
   button item
  */
 Column buildButtonColumn(IconData icon, String label, BuildContext context) {
-    Color color = Theme.of(context).primaryColor;
+  Color color = Theme.of(context).primaryColor;
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, color: color),
-        Container(
-          margin: const EdgeInsets.only(top: 8.0),
-          child: Text(
-            label,
-            style: TextStyle(
-              fontSize: 12.0,
-              fontWeight: FontWeight.w400,
-              color: color,
-            ),
+  return Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Icon(icon, color: color),
+      Container(
+        margin: const EdgeInsets.only(top: 8.0),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 12.0,
+            fontWeight: FontWeight.w400,
+            color: color,
           ),
         ),
-      ],
-    );
-  }
+      ),
+    ],
+  );
+}
 
 /*
    text section
@@ -118,10 +125,9 @@ Column buildButtonColumn(IconData icon, String label, BuildContext context) {
 Widget createTextSection() {
   return Container(
       padding: const EdgeInsets.all(32.0),
-  child: Text(
-  '''
+      child: Text(
+        '''
 長いテキストああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ     ''',
-  softWrap: true,
-  )
-  );
+        softWrap: true,
+      ));
 }
