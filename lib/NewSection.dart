@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projects/ListActivity.dart';
+import 'package:projects/ListItem.dart';
 
 class NewSection extends StatelessWidget {
   @override
@@ -30,7 +30,7 @@ class NewSection extends StatelessWidget {
           print('click tapped!');
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ListActivity(index)),
+            MaterialPageRoute(builder: (context) => ListItem(index)),
           );
         },
       child: Center(
