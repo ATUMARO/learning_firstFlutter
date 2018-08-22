@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:projects/NewSection.dart';
+import 'package:projects/MyColors.dart';
 
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   final newThemeData = ThemeData(
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
     primaryColor: Colors.pink[200],
     accentColor: Colors.pink[900],
   );
@@ -71,7 +72,7 @@ Widget createTitleSection() {
         ),
         new Icon(
           Icons.star,
-          color: Colors.red[500],
+          color: Colors.redAccent,
         ),
         new Text('41'),
       ],
@@ -99,13 +100,12 @@ Widget createButtonSection(BuildContext context) {
   button item
  */
 Column buildButtonColumn(IconData icon, String label, BuildContext context) {
-  Color color = Theme.of(context).primaryColor;
 
   return Column(
     mainAxisSize: MainAxisSize.min,
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Icon(icon, color: color),
+      Icon(icon, color: MyColors.baseColors['icon']),
       Container(
         margin: const EdgeInsets.only(top: 8.0),
         child: Text(
@@ -113,7 +113,7 @@ Column buildButtonColumn(IconData icon, String label, BuildContext context) {
           style: TextStyle(
             fontSize: 12.0,
             fontWeight: FontWeight.w400,
-            color: color,
+            color: MyColors.baseColors['button_text'],
           ),
         ),
       ),
@@ -131,5 +131,8 @@ Widget createTextSection() {
         '''
 長いテキストああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ     ''',
         softWrap: true,
+        style: TextStyle(
+          color: MyColors.baseColors['normal_text']
+        ),
       ));
 }
