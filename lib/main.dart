@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projects/NewSection.dart';
 
 void main() => runApp(new MyApp());
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
             ),
             createTitleSection(),
             createButtonSection(context),
-            createTextSection()
+            createTextSection(),
+            NewSection()
           ],
         ),
       ),
