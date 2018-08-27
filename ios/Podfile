@@ -54,9 +54,7 @@ target 'Runner' do
   }
 
   # Firebase
-  pod 'Firebase'
   pod 'Firebase/Core'
-  pod 'Firebase/Messaging'
 end
 
 post_install do |installer|

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'dart:async';
 import 'dart:convert' show json;
 import "package:http/http.dart" as http;
@@ -98,6 +99,31 @@ class SignInDemoState extends State<SignIn> {
     _googleSignIn.disconnect();
   }
 
+  Future<Null> _handleFacebookSignIn(BuildContext context) async {
+    var facebookLogin = new FacebookLogin();
+    var result = await facebookLogin.logInWithReadPermissions(['email']);
+
+    switch (result.status) {
+      case FacebookLoginStatus.loggedIn:
+        Scaffold.of(context).showSnackBar(new SnackBar(
+          content: new Text("Logged In"),
+        ));
+        break;
+      case FacebookLoginStatus.cancelledByUser:
+        Scaffold.of(context).showSnackBar(new SnackBar(
+          content: new Text("Cancelled by User"),
+        ));
+        break;
+      case FacebookLoginStatus.error:
+        Scaffold.of(context).showSnackBar(new SnackBar(
+          content: new Text("error: ${result.errorMessage}"),
+        ));
+        break;
+    }
+  }
+
+
+
   Widget _buildBody() {
     if (_currentUser != null) {
       return new Column(
@@ -124,12 +150,23 @@ class SignInDemoState extends State<SignIn> {
       );
     } else {
       return new Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           const Text("You are not currently signed in."),
           new RaisedButton(
-            child: const Text('SIGN IN'),
+            child: const Text('Google Sign In'),
             onPressed: _handleSignIn,
+          ),
+          Builder(
+            builder: (context) =>
+                Center(
+                  child: RaisedButton(
+                    color: Colors.pink,
+                    textColor: Colors.white,
+                    onPressed: () => _handleFacebookSignIn(context),
+                    child: Text('Facebook Sign In'),
+                  ),
+                ),
           ),
         ],
       );
