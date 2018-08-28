@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">projects</string>
+    <string name="app_name">firstFlutter</string>
     <string name="facebook_app_id">458546644658146</string>
     <string name="fb_login_protocol_scheme">fb458546644658146</string>
 </resources>

@@ -52,9 +52,6 @@ target 'Runner' do
     File.symlink(p[:path], symlink)
     pod p[:name], :path => File.join(symlink, 'ios')
   }
-
-  # Firebase
-  pod 'Firebase/Core'
 end
 
 post_install do |installer|

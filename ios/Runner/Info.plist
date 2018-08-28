@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>projects</string>
+	<string>firstFlutter</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -42,53 +42,46 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSAllowsArbitraryLoads</key>
-        <true/>
-        <key>NSExceptionDomains</key>
-        <dict>
-            <key>localhost:8080</key>
-            <dict>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSIncludesSubdomains</key>
-                <true/>
-            </dict>
-        </dict>
-
-    <!-- Google Sign-in Section -->
+	<true/>
+	<key>NSExceptionDomains</key>
+	<dict>
+		<key>localhost:8080</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+		</dict>
+	</dict>
+    
     <key>CFBundleURLTypes</key>
     <array>
-    	<dict>
-    		<key>CFBundleTypeRole</key>
-    		<string>Editor</string>
-    		<key>CFBundleURLSchemes</key>
-    		<array>
-    			<string>com.googleusercontent.apps.668884704747-6ta49o59jm0ldavjqs0ups56l5fsr8a0</string>
-    		</array>
-    	</dict>
-    </array>
-    <!-- End of the Google Sign-in Section -->
-
-  <!-- Facebook Sign-in Section -->
-     <key>CFBundleURLTypes</key>
-     <array>
-         <dict>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
             <key>CFBundleURLSchemes</key>
-        <array>
-      <string>fb458546644658146</string>
-     </array>
+            <array>
+                <string>com.googleusercontent.apps.668884704747-6ta49o59jm0ldavjqs0ups56l5fsr8a0</string>
+            </array>
+            <!--  todo facebook & googleの設定の共存はちゃんと出来てない-->
+<!--            <key>CFBundleURLSchemes</key>-->
+<!--            <array>-->
+<!--                <string>fb458546644658146</string>-->
+<!--            </array>-->
         </dict>
-     </array>
-      <key>FacebookAppID</key>
-          <string>458546644658146</string>
-      <key>FacebookDisplayName</key>
-          <string>firstFlutter</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>fbapi</string>
-      <string>fb-messenger-share-api</string>
-      <string>fbauth2</string>
-      <string>fbshareextension</string>
     </array>
-     <!-- End of the Facebook Sign-in Section -->
+    
+<!--    <key>FacebookAppID</key>-->
+<!--    <string>458546644658146</string>-->
+<!--    <key>FacebookDisplayName</key>-->
+<!--    <string>firstFlutter</string>-->
+<!--    -->
+<!--    <key>LSApplicationQueriesSchemes</key>-->
+<!--    <array>-->
+<!--        <string>fbapi</string>-->
+<!--        <string>fb-messenger-share-api</string>-->
+<!--        <string>fbauth2</string>-->
+<!--        <string>fbshareextension</string>-->
+<!--    </array>-->
 </dict>
 </plist>
