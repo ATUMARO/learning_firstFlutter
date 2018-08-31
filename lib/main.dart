@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projects/NewSection.dart';
 import 'package:projects/MyColors.dart';
 import 'package:projects/Login.dart';
+import 'package:projects/API/APIMain.dart';
 
 void main() => runApp(new MyApp());
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             LoginSection(),
+            APISection(),
             createTitleSection(),
             createButtonSection(context),
             createTextSection(),
@@ -159,6 +161,33 @@ class LoginSection extends StatelessWidget {
       },
       child: Text('login'),
     ),
+        ));
+  }
+}
+
+/*
+ * Login section
+ */
+class APISection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+        alignment: Alignment.center,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: RaisedButton(
+            padding: const EdgeInsets.all(8.0),
+            elevation: 4.0,
+            splashColor: Colors.blueGrey,
+            onPressed: () {
+              print('click tapped!');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => APIMain()),
+              );
+            },
+            child: Text('API get Data'),
+          ),
         ));
   }
 }
