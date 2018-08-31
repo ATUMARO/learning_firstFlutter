@@ -10,9 +10,10 @@ Future<User> fetchPost() async {
 
   if (response.statusCode == 200) {
     // If server returns an OK response, parse the JSON
+    var responseJson = json.decode(utf8.decode(response.bodyBytes));
     print('${response.body}\n');
-    print('${json.decode(response.body)}');
-    return User.fromJson(json.decode(response.body)[0]);
+    print('$responseJson');
+    return User.fromJson(responseJson[0]);
   } else {
     // If that response was not OK, throw an error.
     throw Exception('Failed to load post');
